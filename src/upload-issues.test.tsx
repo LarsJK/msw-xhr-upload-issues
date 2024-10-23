@@ -20,10 +20,6 @@ function makeXhrRequest(method: string, url: string, file?: File) {
 		const xhr = new XMLHttpRequest()
 		xhr.open(method, url, true)
 
-		// if (file) {
-		// 	xhr.setRequestHeader('Content-Type', 'multipart/form-data')
-		// }
-
 		xhr.onload = () => {
 			if (xhr.status >= 200 && xhr.status < 300) {
 				resolve(xhr.response)
@@ -41,14 +37,6 @@ function makeXhrRequest(method: string, url: string, file?: File) {
 				statusText: xhr.statusText,
 			})
 		}
-
-		// xhr.onreadystatechange = function () {
-		// 	if (xhr.readyState === 4 && xhr.status === 200) {
-		// 		// The file has been uploaded successfully
-		// 		console.log('File successfully uploaded!')
-		// 		resolve(xhr.response)
-		// 	}
-		// }
 
 		if (file) {
 			const fileData = new FormData()
