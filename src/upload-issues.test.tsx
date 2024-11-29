@@ -34,7 +34,7 @@ function makeXhrRequest(method: string, url: string, file?: File) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
-
+    xhr.setRequestHeader('Content-Type', 'multipart/form-data')
     xhr.onload = () => {
       if (xhr.status >= 200 && xhr.status < 300) {
         resolve(xhr.response);
