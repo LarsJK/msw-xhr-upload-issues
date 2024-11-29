@@ -7,6 +7,7 @@
         "test": "vitest run"
     },
     "devDependencies": {
+        "happy-dom": "^15.11.7",
         "jsdom": "^25.0.0",
         "msw": "^2.4.4",
         "vite": "^5.4.9",
